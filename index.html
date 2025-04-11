@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Unidades Curriculares</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Gestor de UCs</h1>
+    </div>
+
+    <!-- Formulário para Adicionar UC -->
+    <form class="form-add" id="form-add-uc">
+        <input type="text" id="codigo" placeholder="Código (ex: UC 01)" required>
+        <input type="text" id="descricao" placeholder="Descrição" required>
+        <input type="number" id="carga" placeholder="Carga Horária" required>
+        <input type="number" id="indicadores" placeholder="Qtd. Indicadores" required>
+        <button type="submit"><i class="fas fa-plus"></i> Adicionar UC</button>
+    </form>
+
+    <!-- Tabela Dinâmica -->
+    <table id="uc-table">
+        <thead>
+            <tr>
+                <th>UC</th>
+                <th>Descrição</th>
+                <th>Carga Horária</th>
+                <th>Indicadores</th>
+                <th>Dias/UC</th>
+                <th>Dias/Indicador</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Dados serão preenchidos via JS -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td id="total-carga">0</td>
+                <td id="total-indicadores">0</td>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Gráfico -->
+    <div class="grafico-container">
+        <canvas id="grafico-barras"></canvas>
+    </div>
+    
+    <div style="margin: 20px 0;" class="botoes-exportacao">
+        <button onclick="exportarParaExcel()"><i class="fas fa-file-excel"></i> Exportar para Excel</button>
+        <button onclick="exportarParaPDF()" style="margin-left: 10px;"><i class="fas fa-file-pdf"></i> Exportar para PDF</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

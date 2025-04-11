@@ -1,0 +1,131 @@
+        /* Estilos Base */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f3f4f6;
+        }
+
+        /* Cabeçalho */
+        .header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Tabela Dinâmica */
+        #uc-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            /* Opcional: bordas suaves */
+        }
+
+        #uc-table th,
+        #uc-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        #uc-table th {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        /* Formulário */
+        .form-add {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-add input {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+        }
+
+        /* Botões */
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Inputs dentro da tabela (edição inline) */
+        #uc-table input.editable {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 4px 6px;
+            font-size: 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+        }
+
+        #uc-table input.editable[type="number"] {
+            width: 60px;
+        }
+
+        /* botões horizontalmente no meio da tela */
+        .botoes-exportacao {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 10px 6px;
+            gap: 10px;
+            /* Espaço entre os botões */
+            margin: 20px 0;
+            border: 1px solid #d1d5db;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+        }
+
+        /* leve espaço entre os ícones e os textos dentro dos botões */
+        button i {
+            margin-right: 6px;
+        }
+
+        .grafico-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Adicionar bordas arredondadas no <thead> */
+        #uc-table thead th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        #uc-table thead th:last-child {
+            border-top-right-radius: 8px;
+        }
+        
+        .col-lixeira {
+            text-align: center;
+        }
+        
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #uc-table {
+                font-size: 14px;
+            }
+        }
